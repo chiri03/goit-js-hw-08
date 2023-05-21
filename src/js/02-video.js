@@ -5,12 +5,10 @@ const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 
 const onPlay = function (currentTime) {
-  localStorage.setItem('videoplayer-current-time', currentTime);
+  localStorage.setItem('videoplayer-current-time', currentTime.seconds);
 };
 
-let throt_fun = throttle(onPlay, 1000);
-
-player.on('timeupdate ', throt_fun);
+player.on('timeupdate', throttle(onPlay, 1000));
 
 let replayTime = localStorage.getItem('videoplayer-current-time');
 
