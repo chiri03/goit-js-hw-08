@@ -15,4 +15,3 @@ function handleInput(event) {
   feedbackForm[event.target.name] = event.target.value;
   localStorage.setItem('feedback-form-state', JSON.stringify(feedbackForm));
 }
-!
