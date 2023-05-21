@@ -18,6 +18,7 @@ player
   .catch(function (error) {
     switch (error.name) {
       case 'RangeError':
+        alert('The time was less than 0 or greater than the video’s duration');
         break;
 
       default:
